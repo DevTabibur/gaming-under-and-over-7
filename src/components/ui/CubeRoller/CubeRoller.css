@@ -1,0 +1,177 @@
+.container {
+  width: 100px; /* Reduced size */
+  height: 100px; /* Reduced size */
+  position: relative;
+  perspective: 1000px;
+  perspective-origin: 50% 100%;
+
+}
+
+.goAnimate {
+  animation: yAnimate 4s linear infinite;
+}
+@keyframes yAnimate {
+  0% {
+    transform: rotateX(-30deg) rotateY(0);
+  }
+
+  100% {
+    transform: rotateX(-30deg) rotateY(360deg);
+  }
+}
+
+  #cube .front,
+  #cube .back,
+  #cube .right,
+  #cube .left,
+  #cube .top,
+  #cube .bottom {
+    border-radius: 10px;
+  }
+
+
+#cube .front {
+  transform: translateZ(50px); /* Adjust Z-translation */
+}
+
+#cube .back {
+  transform: rotateX(-180deg) translateZ(50px); /* Adjust Z-translation */
+}
+
+#cube .right {
+  transform: rotateY(90deg) translateZ(50px); /* Adjust Z-translation */
+}
+
+#cube .left {
+  transform: rotateY(-90deg) translateZ(50px); /* Adjust Z-translation */
+}
+
+#cube .top {
+  transform: rotateX(90deg) translateZ(50px); /* Adjust Z-translation */
+}
+
+#cube .bottom {
+  transform: rotateX(-90deg) translateZ(50px); /* Adjust Z-translation */
+}
+
+#cube {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  transition: transform 6s;
+  background: #ffffff; /* Set background to solid white */
+
+}
+
+#cube:hover {
+  cursor: pointer;
+}
+#cube div {
+  background: #ffffff; /* Set background to solid white */
+  display: block;
+  position: absolute;
+  width: 100px; /* Reduced size */
+  height: 100px; /* Reduced size */
+  border: 1px solid #727171d8;
+  margin: 0 auto;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 250%; /* Adjust font size to keep it proportional */
+  text-align: center;
+  padding: 20px 0; /* Adjust padding */
+}
+
+.dot {
+  display: block;
+  position: absolute;
+  width: 15px; /* Reduced size of dots */
+  height: 15px; /* Reduced size of dots */
+  background: black;
+  border-radius: 7.5px; /* Adjust to half the size */
+}
+
+/* Adjust dot positions accordingly */
+.front .dot1 {
+  top: 42.5px;
+  left: 42.5px;
+}
+.back .dot1 {
+  top: 22.5px;
+  left: 22.5px;
+}
+.back .dot2 {
+  top: 62.5px;
+  left: 62.5px;
+}
+.right .dot1 {
+  top: 22.5px;
+  left: 22.5px;
+}
+.right .dot2 {
+  top: 42.5px;
+  left: 42.5px;
+}
+.right .dot3 {
+  top: 62.5px;
+  left: 62.5px;
+}
+.left .dot1 {
+  top: 22.5px;
+  left: 22.5px;
+}
+.left .dot2 {
+  top: 22.5px;
+  left: 62.5px;
+}
+.left .dot3 {
+  top: 62.5px;
+  left: 22.5px;
+}
+.left .dot4 {
+  top: 62.5px;
+  left: 62.5px;
+}
+.top .dot1 {
+  top: 22.5px;
+  left: 22.5px;
+}
+.top .dot2 {
+  top: 22.5px;
+  left: 62.5px;
+}
+.top .dot3 {
+  top: 42.5px;
+  left: 42.5px;
+}
+.top .dot4 {
+  top: 62.5px;
+  left: 22.5px;
+}
+.top .dot5 {
+  top: 62.5px;
+  left: 62.5px;
+}
+.bottom .dot1 {
+  top: 22.5px;
+  left: 22.5px;
+}
+.bottom .dot2 {
+  top: 22.5px;
+  left: 42.5px;
+}
+.bottom .dot3 {
+  top: 22.5px;
+  left: 62.5px;
+}
+.bottom .dot4 {
+  top: 62.5px;
+  left: 22.5px;
+}
+.bottom .dot5 {
+  top: 62.5px;
+  left: 42.5px;
+}
+.bottom .dot6 {
+  top: 62.5px;
+  left: 62.5px;
+}

@@ -1,0 +1,53 @@
+.dice-container {
+  display: flex;
+  justify-content: center;
+  perspective: 1000px; /* Adding perspective for 3D effect */
+  align-items: center;
+}
+
+.die {
+  font-size: 6rem; /* Adjusted size */
+  padding: 0.5rem; /* Adjusted padding */
+  color: white;
+  position: relative;
+  transform-style: preserve-3d; /* Enables 3D transformation */
+  transition: transform 1s ease-in-out;
+}
+
+.die-rolling {
+  animation: revolve 1s ease infinite; /* Apply 3D rolling animation */
+}
+
+/* 3D rolling keyframes */
+@keyframes revolve {
+  0% {
+    transform: rotate3d(1, 0, 0, 0deg) rotate3d(0, 1, 0, 0deg);
+  }
+  100% {
+    transform: rotate3d(1, 1, 0, 360deg); /* Full 3D rotation */
+  }
+}
+
+
+
+
+.animateBorder {
+  background: linear-gradient(135deg, #FBDF9B, #eecc75, #f7ca58);
+  background-size: 300% 300%; /* Larger background size for smooth animation */
+  animation: animateGradient 3s ease infinite;
+  border-radius: 50%; /* Ensure rounded corners */
+}
+
+@keyframes animateGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+

@@ -1,0 +1,72 @@
+
+/* styles.css or your appropriate CSS file */
+.skeleton {
+    background: linear-gradient(90deg, rgba(249, 222, 152, 0.8) 0%, rgba(255, 255, 255, 0.3) 50%, rgba(249, 222, 152, 0.8) 100%);
+    background-size: 200% 100%; 
+    animation: shimmer 1.5s infinite; 
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-position: 200% 0; 
+    }
+    100% {
+      background-position: 0 0; 
+    }
+  }
+
+  @keyframes thing {
+    0% {
+      background-position: 130%;
+      opacity: 1;
+    }
+  
+    to {
+      background-position: -166%;
+      opacity: 0;
+    }
+  }
+
+
+
+/* Frutiger Button effect */
+
+.inner_shimmer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 786px 720px 734px 746px;
+}
+
+.inner_shimmer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 786px 720px 734px 746px;
+  background: linear-gradient(-65deg, #0000 40%, #fff7 50%, #0000 70%);
+  background-size: 200% 100%;
+  background-repeat: no-repeat;
+
+  animation: thing 3s ease infinite;
+}
+
+@keyframes thing {
+  0% {
+    background-position: 130%;
+    opacity: 1;
+  }
+
+  to {
+    background-position: -166%;
+    opacity: 0;
+  }
+}
+
+
+
+
+/* .frutiger-button:active .inner::after {
+  box-shadow: inset 0px 2px 8px -2px #000a;
+} */
+
+

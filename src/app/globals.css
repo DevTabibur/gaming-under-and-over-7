@@ -1,0 +1,137 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  background-color: rgb(44, 42, 40);
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url('../assets/gamebg.gif') no-repeat center center;
+  background-size: cover;
+  filter: blur(20px);
+  z-index: -1;
+  box-shadow: none; 
+}
+
+body * {
+  position: relative;
+  z-index: 1; 
+  box-shadow: none; 
+}
+
+
+
+.red-div {
+  position: relative; /* Necessary for z-index to take effect */
+  z-index: 5; /* Lower than the flip component */
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+
+
+
+.perspective {
+  perspective: 1000px;
+}
+
+.backface-hidden {
+  backface-visibility: hidden; /* Hide the back face when not visible */
+}
+
+.flip-card {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  z-index: 20; /* Ensures this is on top of other elements */
+}
+
+
+
+.gift-box-glow::before {
+  content: "";
+  position: absolute;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.3) 40%, transparent 80%);
+  z-index: -1;
+  border-radius: 50%;
+  filter: blur(10px);
+  animation: orbit-dim 5s infinite linear;
+}
+
+/* Keyframes for orbiting and dimming */
+@keyframes orbit-dim {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) scale(1.1);
+    opacity: 1;
+  }
+  75% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) scale(1);
+    opacity: 1;
+  }
+}
+
+/*  */
+
+
+.glossy-bg {
+  background: linear-gradient(145deg, #f7e3b4, #fbdc8a); /* Gradient background */
+  border-radius: 50%; /* Round shape */
+  box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.1), /* Inner shadow */
+              10px 10px 20px rgba(0, 0, 0, 0.2), /* Outer shadow */
+              -5px -5px 10px rgba(255, 255, 255, 0.5); /* Highlight */
+  position: relative;
+  overflow: hidden; /* Ensure ::before stays within rounded borders */
+}
+
+.glossy-bg::before {
+  content: '';
+  position: absolute;
+  top: -50%; /* Start above the element */
+  left: -50%; /* Start left of the element */
+  width: 200%; /* Large width for sweeping effect */
+  height: 200%; /* Large height for sweeping effect */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  pointer-events: none;
+  transform: rotate(45deg); /* Angle the highlight */
+  animation: glossy-animation 3s ease-in-out infinite; /* Animation applied */
+  mask-image: radial-gradient(circle, white, transparent 60%);
+}
+
+@keyframes glossy-animation {
+  0% {
+    transform: translate(-100%, -100%) rotate(45deg);
+  }
+  50% {
+    transform: translate(100%, 100%) rotate(95deg); /* Move across element */
+  }
+  100% {
+    transform: translate(-100%, -100%) rotate(45deg); /* Reset position */
+  }
+}
